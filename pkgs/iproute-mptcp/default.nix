@@ -13,8 +13,8 @@ iproute2.overrideAttrs (oa: rec {
 
   preConfigure = ''
     # Don't try to create /var/lib/arpd:
-    sed -e '/ARPDDIR/d' -i Makefile
-    # patchShebangs configure
+    # sed -e '/ARPDDIR/d' -i Makefile
+    patchShebangs configure
   '';
 
   meta = with lib; {
