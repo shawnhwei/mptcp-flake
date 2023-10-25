@@ -15,7 +15,19 @@ iproute2.overrideAttrs (oa: rec {
     patchShebangs configure
   '';
 
-  patches = [ ];
+  patches = [
+    # We override "patches" to never apply any iproute2 patches:
+  ] ++ [
+    # iproute-mptcp patches:
+
+    # Pull upstream fix for -fno-common toolchain support:
+    #   https://github.com/multipath-tcp/iproute-mptcp/pull/8
+    (fetchpatch {
+      name = "fno-common.patch";
+      url = "https://github.com/multipath-tcp/iproute-mptcp/commit/7aebfde8624c978f6f73b03142892f802d21cc0b.patch";
+      sha256 = "098402sjdm10r9xggz6naygnfjs74d9k3s2wc2aczx0d2zayhff8";
+    })
+  ];
 
   meta = with lib; {
     homepage = "https://github.com/multipath-tcp/iproute-mptcp";
