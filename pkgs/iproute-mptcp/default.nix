@@ -11,6 +11,12 @@ iproute2.overrideAttrs (oa: rec {
     sha256 = "07fihvwlaj0ng8s8sxqhd0a9h1narcnp4ibk88km9cpsd32xv4q3";
   };
 
+  preConfigure = ''
+    patchShebangs configure
+  '';
+
+  patches = [ ];
+
   meta = with lib; {
     homepage = "https://github.com/multipath-tcp/iproute-mptcp";
     description = "IP-Route extensions for MultiPath TCP";
