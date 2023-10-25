@@ -17,7 +17,7 @@ buildLinux ({
     owner = "multipath-tcp";
     repo = "mptcp";
     rev = "6c1e3d3b8a6d1217dd05389ca1a7fb5bf5eca42a";
-    sha256 = "sha256-6O/UQhxcMrT6Xr3V5niJmVuFDy6COhgFKg60IvWle2U=";
+    sha256 = "sha256-QGO4FOX8sDFVhVF5blON6Y/sCh2J2v4BWnI/CSlt5Ds=";
   };
 
   structuredExtraConfig = lib.mkMerge [
