@@ -2,7 +2,7 @@
 
 iproute2.overrideAttrs (oa: rec {
   pname = "iproute_mptcp";
-  version = "0.95";
+  version = "0.96";
 
   src = fetchFromGitHub {
     owner = "multipath-tcp";
